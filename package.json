@@ -1,0 +1,54 @@
+{
+  "name": "buzzme",
+  "version": "1.0.0",
+  "description": "Send notifications to Telegram, Discord, Slack, and ntfy from your terminal",
+  "type": "module",
+  "main": "./dist/api.js",
+  "types": "./dist/api.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/api.js",
+      "types": "./dist/api.d.ts"
+    }
+  },
+  "bin": {
+    "buzzme": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "postbuild": "node scripts/postbuild.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "telegram",
+    "discord",
+    "slack",
+    "ntfy",
+    "webhook",
+    "notifications",
+    "notify",
+    "cli"
+  ],
+  "author": "bgocumlu",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bgocumlu/buzzme"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^14.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "typescript": "^6.0.2",
+    "vitest": "^4.1.1"
+  }
+}
